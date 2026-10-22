@@ -171,7 +171,105 @@ def main():
     st.set_page_config(page_title=SITE_TITLE, page_icon="✦", layout="wide")
     # CSS controls color, spacing, typography, and card design.
     css = """<style>
-    .stApp {background:radial-gradient(ellipse at 85% 5%,#1b2c3b 0%,transparent 45%),BACKGROUND;color:TEXT;}
+    .stApp {
+      color:TEXT;
+      background-color:#050912;
+
+      background-image:
+        /* Small planet toward the upper right */
+        radial-gradient(
+          circle 36px at 94% 22%,
+          #080d18 0%,
+          #152338 65%,
+          #60748b 88%,
+          #b5bfc5 94%,
+          transparent 100%
+        ),
+
+        /* Distant purple planet */
+        radial-gradient(
+          circle 18px at 5% 76%,
+          #0b0c18 0%,
+          #29213d 70%,
+          #76638a 93%,
+          transparent 100%
+        ),
+
+        /* Brighter stars, spaced widely */
+        radial-gradient(
+          circle at 32px 48px,
+          #ecf3ff 0 1px,
+          rgba(180,210,255,.2) 1.5px,
+          transparent 3px
+        ),
+
+        /* Small white stars */
+        radial-gradient(
+          circle at 110px 140px,
+          rgba(255,255,255,.65) 0 .7px,
+          transparent 1.2px
+        ),
+
+        /* Faint blue stars */
+        radial-gradient(
+          circle at 190px 72px,
+          rgba(163,196,255,.5) 0 .8px,
+          transparent 1.5px
+        ),
+
+        /* Occasional warm stars */
+        radial-gradient(
+          circle at 60px 210px,
+          rgba(240,213,165,.65) 0 .8px,
+          transparent 1.5px
+        ),
+
+        /* Soft blue nebula */
+        radial-gradient(
+          ellipse at 85% 12%,
+          rgba(36,76,120,.28),
+          transparent 48%
+        ),
+
+        /* Faint violet nebula */
+        radial-gradient(
+          ellipse at 8% 85%,
+          rgba(71,39,96,.2),
+          transparent 45%
+        ),
+
+        /* Deep space base */
+        linear-gradient(
+          160deg,
+          #050912,
+          #0a1220 55%,
+          #050810
+        );
+
+      background-size:
+        100% 100%,
+        100% 100%,
+        410px 370px,
+        230px 290px,
+        310px 250px,
+        470px 430px,
+        100% 100%,
+        100% 100%,
+        100% 100%;
+
+      background-repeat:
+        no-repeat,
+        no-repeat,
+        repeat,
+        repeat,
+        repeat,
+        repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+
+      background-attachment:fixed;
+    }
     .block-container {max-width:1180px;padding-top:1.4rem;}
     h1,h2,h3 {color:TEXT!important;}
     .eyebrow {letter-spacing:.22em;font-size:.73rem;color:ACCENT;text-transform:uppercase;}
