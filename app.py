@@ -240,17 +240,20 @@ def main():
                     number, suffix = formatted_distance(km, unit)
                     status = "STALE · distance frozen" if stale else "● Updating prediction"
                     downloaded = record["downloaded"].strftime("%H:%M:%S UTC")
-                    st.markdown(f'''<div class="mission-card">
+                    st.html(f'''
+                    <div class="mission-card">
                       <h2>{html.escape(name)}</h2>
                       <div class="muted">{html.escape(MISSION_NOTES[name])}</div>
                       <div class="muted">Distance from the {reference}'s center</div>
-                      <div class="distance">{number} <span style="font-size:1rem">{suffix}</span></div>
-                                            <div class="muted">{km / AU_KM:,.4f} astronomical units</div>
+
+                      <div class="distance">
+                        {number} <span style="font-size:1rem">{suffix}</span>
+                      </div>
+                      <div class="muted">{km / AU_KM:,.4f} astronomical units</div>
 
                       <img
                         src="{html.escape(MISSION_IMAGES[name])}"
                         alt="Artist illustration of {html.escape(name)}"
-                        loading="lazy"
                         style="width:100%;height:180px;object-fit:contain;
                                background:#080e16;border-radius:4px;
                                display:block;margin:18px 0 6px;"
@@ -258,12 +261,16 @@ def main():
                       <div class="muted" style="font-size:.65rem;">
                         Artist illustration · NASA mission imagery
                       </div>
+
                       <hr style="border-color:#30445e;margin:24px 0">
                       <div class="muted">Approximate one-way light time from Earth</div>
-                      <div style="font-size:1.4rem;margin:4px 0 20px">{earth / LIGHT_SPEED / 3600:.2f} hours</div>
+                      <div style="font-size:1.4rem;margin:4px 0 20px">
+                        {earth / LIGHT_SPEED / 3600:.2f} hours
+                      </div>
                       <div class="accent">{status}</div>
                       <div class="muted">Trajectory downloaded {downloaded}</div>
-                    </div>''', unsafe_allow_html=True)
+                    </div>
+                    ''')
                     if stale:
                         frozen_at = datetime.fromtimestamp(covered_time, UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
                         st.warning("Predictions expired. Showing the last covered time: " + frozen_at)
