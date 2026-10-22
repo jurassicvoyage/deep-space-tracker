@@ -30,7 +30,7 @@ MISSION_NOTES = {
 }
 # ---------- EDIT THE WEBSITE'S APPEARANCE HERE ----------
 SITE_TITLE = "The New Pioneers"
-HERO_TITLE = "The frontier has moved."
+HERO_TITLE = "The Frontier Has Moved."
 HERO_TEXT = (
     "Once, expeditions like Lewis and Clark's traced rivers and crossed continents. "
     "Today, our explorers travel beyond the planets. Five spacecraft carry that "
