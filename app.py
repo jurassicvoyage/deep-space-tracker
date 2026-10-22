@@ -172,17 +172,17 @@ def main():
     # CSS controls color, spacing, typography, and card design.
     css = """<style>
     .stApp {background:radial-gradient(ellipse at 85% 5%,#1b2c3b 0%,transparent 45%),BACKGROUND;color:TEXT;}
-    .block-container {max-width:1180px;padding-top:2.4rem;}
+    .block-container {max-width:1180px;padding-top:1.4rem;}
     h1,h2,h3 {color:TEXT!important;}
     .eyebrow {letter-spacing:.22em;font-size:.73rem;color:ACCENT;text-transform:uppercase;}
-    .masthead {border-bottom:1px solid #34414c;padding-bottom:18px;margin-bottom:45px;
+    .masthead {border-bottom:1px solid #34414c;padding-bottom:12px;margin-bottom:22px;
       display:flex;justify-content:space-between;gap:20px;color:TEXT;font-size:.8rem;letter-spacing:.14em;}
-    .hero {padding:0 0 45px;max-width:850px;}
-    .hero h1 {font-family:Georgia,serif;font-size:clamp(3rem,7vw,5.7rem);font-weight:400;
-      line-height:1.03;letter-spacing:-.055em;margin:16px 0 22px;}
-    .hero p {max-width:680px;font-size:1.12rem;line-height:1.85;color:#bdc7ce;}
-    .trail {width:90px;height:2px;background:ACCENT;margin:26px 0;}
-    .section-label {border-top:1px solid #34414c;padding-top:22px;margin:12px 0 22px;
+    .hero {padding:0 0 16px;max-width:850px;}
+    .hero h1 {font-family:Georgia,serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;
+      line-height:1.1;letter-spacing:-.035em;margin:10px 0 12px;}
+    .hero p {max-width:780px;font-size:.95rem;line-height:1.55;color:#bdc7ce;}
+    .trail {width:60px;height:2px;background:ACCENT;margin:14px 0;}
+    .section-label {border-top:1px solid #34414c;padding-top:14px;margin:8px 0 14px;
       color:ACCENT;font-size:.78rem;letter-spacing:.15em;}
     .mission-card {background:CARD;border:1px solid #34414c;border-top:2px solid ACCENT;
       border-radius:4px;padding:28px;margin:8px 0 12px;min-height:355px;color:TEXT;}
@@ -193,7 +193,7 @@ def main():
     .mission-card h2 {font-family:Georgia,serif;font-size:2rem;font-weight:400;margin:0 0 8px;}
     .closing {border-top:1px solid #34414c;margin-top:45px;padding:24px 0 8px;
       font-family:Georgia,serif;font-style:italic;font-size:1.3rem;color:ACCENT;}
-    @media(max-width:600px){.masthead{font-size:.65rem;}.hero{padding-bottom:20px;}.mission-card{padding:22px;}}
+    @media(max-width:600px){.masthead{font-size:.65rem;}.hero{padding-bottom:12px;}.mission-card{padding:22px;}}
     </style>"""
     for token, value in {"BACKGROUND": BACKGROUND_COLOR, "CARD": CARD_COLOR,
                          "ACCENT": ACCENT_COLOR, "TEXT": TEXT_COLOR}.items():
