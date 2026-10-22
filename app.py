@@ -176,51 +176,56 @@ def main():
       background-color:#050912;
 
       background-image:
-        /* Small planet toward the upper right */
+        /* Larger, brighter stars */
         radial-gradient(
-          circle 36px at 94% 22%,
-          #080d18 0%,
-          #152338 65%,
-          #60748b 88%,
-          #b5bfc5 94%,
-          transparent 100%
+          circle at 75px 95px,
+          #ffffff 0 1.6px,
+          rgba(215,235,255,.85) 2px,
+          rgba(150,195,255,.25) 4px,
+          transparent 9px
         ),
 
-        /* Distant purple planet */
+        /* Medium warm stars */
         radial-gradient(
-          circle 18px at 5% 76%,
-          #0b0c18 0%,
-          #29213d 70%,
-          #76638a 93%,
-          transparent 100%
+          circle at 210px 170px,
+          #fff4df 0 1.3px,
+          rgba(255,220,165,.45) 2.5px,
+          transparent 6px
         ),
 
-        /* Brighter stars, spaced widely */
+        /* Medium blue stars */
         radial-gradient(
-          circle at 32px 48px,
-          #ecf3ff 0 1px,
-          rgba(180,210,255,.2) 1.5px,
-          transparent 3px
+          circle at 130px 55px,
+          #dceaff 0 1.1px,
+          rgba(145,190,255,.35) 2.5px,
+          transparent 5px
         ),
 
         /* Small white stars */
         radial-gradient(
-          circle at 110px 140px,
-          rgba(255,255,255,.65) 0 .7px,
-          transparent 1.2px
-        ),
-
-        /* Faint blue stars */
-        radial-gradient(
-          circle at 190px 72px,
-          rgba(163,196,255,.5) 0 .8px,
+          circle at 28px 42px,
+          rgba(255,255,255,.85) 0 .8px,
           transparent 1.5px
         ),
 
-        /* Occasional warm stars */
+        /* Distant blue stars */
         radial-gradient(
-          circle at 60px 210px,
-          rgba(240,213,165,.65) 0 .8px,
+          circle at 95px 120px,
+          rgba(165,195,255,.65) 0 .7px,
+          transparent 1.3px
+        ),
+
+        /* Scattered faint stars */
+        radial-gradient(
+          circle at 145px 65px,
+          rgba(255,255,255,.45) 0 .6px,
+          transparent 1.1px
+        ),
+
+        /* Additional warm pinpoints */
+        radial-gradient(
+          circle at 55px 155px,
+          rgba(245,220,180,.7) 0 .8px,
           transparent 1.5px
         ),
 
@@ -238,7 +243,7 @@ def main():
           transparent 45%
         ),
 
-        /* Deep space base */
+        /* Deep space */
         linear-gradient(
           160deg,
           #050912,
@@ -247,19 +252,21 @@ def main():
         );
 
       background-size:
-        100% 100%,
-        100% 100%,
-        410px 370px,
-        230px 290px,
-        310px 250px,
-        470px 430px,
+        580px 470px,
+        430px 390px,
+        350px 310px,
+        160px 190px,
+        210px 170px,
+        270px 230px,
+        310px 290px,
         100% 100%,
         100% 100%,
         100% 100%;
 
       background-repeat:
-        no-repeat,
-        no-repeat,
+        repeat,
+        repeat,
+        repeat,
         repeat,
         repeat,
         repeat,
