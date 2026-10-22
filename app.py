@@ -46,11 +46,11 @@ TEXT_COLOR = "#f4f0e7"
 # Leave as None to use the built-in design without any image downloads.
 HERO_IMAGE = None
 MISSION_IMAGES = {
-    "Voyager 1": None,  # Example: "images/voyager.jpg"
-    "Voyager 2": None,
-    "Pioneer 10": None,
-    "Pioneer 11": None,
-    "New Horizons": None,
+    "Voyager 1": "https://assets.science.nasa.gov/dynamicimage/assets/science/missions/voyager/images/1_Voyager_artist_concept.jpg?w=1024&h=576&fit=clip",
+    "Voyager 2": "https://science.nasa.gov/wp-content/uploads/2023/11/1-voyager-artists-concept-16.width-1320.jpg?w=1024",
+    "Pioneer 10": "https://science.nasa.gov/wp-content/uploads/2023/04/jupiter_pioneer_10_art-jpg.webp?w=1024",
+    "Pioneer 11": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar/2023/07/Pioneer11_1600.jpg?w=1024&h=576&fit=clip",
+    "New Horizons": "https://images-assets.nasa.gov/image/PIA21943/PIA21943~thumb.jpg",
 }
 # ---------- END OF APPEARANCE SETTINGS ----------
 
@@ -224,7 +224,6 @@ def main():
             columns = st.columns(2)
             for column, (name, record) in zip(columns, items[offset:offset + 2]):
                 with column:
-                    show_optional_image(MISSION_IMAGES.get(name))
                     tracks = record["tracks"]
                     if tracks is None:
                         st.subheader(name)
@@ -246,7 +245,19 @@ def main():
                       <div class="muted">{html.escape(MISSION_NOTES[name])}</div>
                       <div class="muted">Distance from the {reference}'s center</div>
                       <div class="distance">{number} <span style="font-size:1rem">{suffix}</span></div>
-                      <div class="muted">{km / AU_KM:,.4f} astronomical units</div>
+                                            <div class="muted">{km / AU_KM:,.4f} astronomical units</div>
+
+                      <img
+                        src="{html.escape(MISSION_IMAGES[name])}"
+                        alt="Artist illustration of {html.escape(name)}"
+                        loading="lazy"
+                        style="width:100%;height:180px;object-fit:contain;
+                               background:#080e16;border-radius:4px;
+                               display:block;margin:18px 0 6px;"
+                      >
+                      <div class="muted" style="font-size:.65rem;">
+                        Artist illustration · NASA mission imagery
+                      </div>
                       <hr style="border-color:#30445e;margin:24px 0">
                       <div class="muted">Approximate one-way light time from Earth</div>
                       <div style="font-size:1.4rem;margin:4px 0 20px">{earth / LIGHT_SPEED / 3600:.2f} hours</div>
